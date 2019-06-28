@@ -1,0 +1,894 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+
+<title>input index</title>
+
+<style type="text/css">
+
+<!--
+
+body {
+
+	background-color: #DFFFFF;
+
+}
+
+-->
+
+</style></head>
+
+<script language="javascript">
+
+function check()
+
+{
+
+	var i=1;
+
+	var x=0;
+
+	var y=0;
+
+	for(i=1;i<44;i++){
+
+	var value=document.getElementById(i).value;
+
+	if(value==0){x++;}	
+
+	}	
+
+
+
+	for(i=1;i<44;i++){
+
+	var value=document.getElementById(i).value;
+
+	if(value<0){y++;}	
+
+	}
+
+	
+
+	if(y>0){alert('Input value could not be negative numbers!'); return false;}
+
+	
+
+	if(x>0){
+
+		if(confirm('You have missing value, do you still want to submit?')){	   
+
+		   document.myform.submit();	  
+
+		}else{
+
+		   window.history.go(-1);
+
+		}
+
+	}else 
+
+	{
+
+	    
+
+		document.myform.submit();
+
+
+
+	}
+
+}
+
+</script>
+
+<script language="javascript">
+
+function CheckINT(input)
+
+{
+
+var reg1 =  /^\d+$/;
+
+if( reg1.test(input)){
+
+	return true;
+
+}else{
+
+	alert('Input must be positive integer!');
+
+};
+
+}
+
+</script>
+
+<body>
+
+  <table width="1373" border="1">
+
+    <tr>
+
+      <td width="1363" height="116"><img src="top.jpg" width="1365" height="112" id="4" value="1"/></td>
+
+    </tr>
+
+  </table>
+
+  <p>&nbsp;</p>
+
+  
+
+<form id='myform' name='myform' action='/test14/MyServlet' method = 'post'>
+
+    <table width="508" border="1" align="center">
+
+      <tr>
+
+        <td colspan="2" bgcolor="#0072E4"><div align="center"><strong>Demographic Parameters </strong></div></td>
+
+      </tr>
+
+      <tr>
+
+        <td>Age: </td>
+
+        <td><input type="text" name="Age" value="0"id="form_Age" onblur="CheckINT(this.value)"/></td>
+
+      </tr>
+
+      <tr>
+
+        <td width="137">Gender: </td>
+
+        <td width="355"><select name="Gender">
+
+            <option value="null"></option>
+
+            <option value="female">Female</option>
+
+            <option value="male">Male</option>
+
+        </select></td>
+
+      </tr>
+
+      <tr>
+
+        <td>Ischemic or Not: </td>
+
+        <td><select name="Ischemic">
+
+          <option value="female">Yes</option>
+
+          <option value="male">NO</option>
+
+        </select></td>
+
+      </tr>
+
+      <tr>
+
+        <td>Weight:
+
+          <label></label></td>
+
+        <td><input type="text" name="Weight" value="0"id="2" />
+
+        KG</td>
+
+      </tr>
+
+      <tr>
+
+        <td>BMI:
+
+          <label></label></td>
+
+        <td><input type="text" name="BMI" value="0"id="3">
+
+          KG/M^2</td>
+
+      </tr>
+
+      <tr>
+
+        <td>Device: </td>
+
+        <td><select name="Device" id="39">
+
+            <option value="null"></option>
+
+            <option value="Duraheart">Duraheart</option>
+
+            <option value="HMII">HMII</option>
+
+            <option value="Jarvik">Jarvik</option>
+
+            <option value="Levacor">Levacor</option>
+
+            <option value="Ventrassist">Ventrassist</option>
+
+        </select></td>
+
+      </tr>
+
+      <tr>
+
+        <td>Diagnosis: </td>
+
+        <td><select name="Diagnosis" id="40">
+
+            <option value="null"></option>
+
+            <option value="State0">NO</option>
+
+            <option value="State1">YES</option>
+
+        </select></td>
+
+      </tr>
+
+      <tr>
+
+        <td>Source: </td>
+
+        <td><select name="Source" id="41">
+
+            <option value="null"></option>
+
+            <option value="AGH">AGH</option>
+
+            <option value="Integris">Integris</option>
+
+        </select></td>
+
+      </tr>
+
+      <tr>
+
+        <td>Treat: </td>
+
+        <td><select name="Treat" id="42">
+
+            <option value="null"></option>
+
+            <option value="BTD">BTD</option>
+
+            <option value="BTT">BTT</option>
+
+            <option value="DT">DT</option>
+
+        </select></td>
+
+      </tr>
+
+      <tr>
+
+        <td>Urgency: </td>
+
+        <td><select name="Urgency" id="43">
+
+            <option value="null"></option>
+
+            <option value="Elective">Elective</option>
+
+            <option value="Emergent">Emergent</option>
+
+            <option value="Urgent">Urgent</option>
+
+        </select></td>
+
+      </tr>
+
+  </table>
+
+    <p>&nbsp;</p>
+
+    <table width="508" border="1" align="center">
+
+      <tr>
+
+        <td colspan="2" bgcolor="#0072E4"><div align="center"><strong>Laboratory Parameters </strong></div></td>
+
+      </tr>
+
+      <tr>
+
+        <td width="141">HGB :
+
+        <label></label></td>
+
+        <td width="351"><label>
+
+          <input type="text" name="HGB"value="0"id="5"  />
+
+        </label>
+
+G/DL </td>
+
+      </tr>
+
+      <tr>
+
+        <td width="141">WBC :
+
+        <label></label></td>
+
+        <td><label>
+
+          <input type="text" name="WBC" value="0"id="6"  />
+
+        </label>
+
+*10E+09/L </td>
+
+      </tr>
+
+      <tr>
+
+        <td width="141">HCT :
+
+        <label></label></td>
+
+        <td><label>
+
+          <input type="text" name="HCT" value="0"id="7" />
+
+        </label>
+
+% </td>
+
+      </tr>
+
+      <tr>
+
+        <td width="141">Albumin :
+
+        <label></label></td>
+
+        <td><label>
+
+          <input type="text" name="Albumin" value="0"id="8"  />
+
+        </label>
+
+G/DL</td>
+
+      </tr>
+
+      <tr>
+
+        <td width="141">ALT :
+
+        <label></label></td>
+
+        <td><label>
+
+          <input type="text" name="ALT" value="0"id="9" onblur="CheckINT(this.value)" />
+
+        </label>
+
+IU/L </td>
+
+      </tr>
+
+      <tr>
+
+        <td width="141">TBILI :
+
+        <label></label></td>
+
+        <td><label>
+
+          <input type="text" name="TBILI" value="0"id="10"  />
+
+        </label>
+
+MG/DL </td>
+
+      </tr>
+
+      <tr>
+
+        <td width="141">INR :
+
+        <label></label></td>
+
+        <td><label>
+
+          <input type="text" name="INR" value="0"id="11" />
+
+        </label></td>
+
+      </tr>
+
+      <tr>
+
+        <td width="141">PTT :
+
+        <label></label></td>
+
+        <td><label>
+
+          <input type="text" name="PTT2" value="0"id="1" />
+
+        </label>
+
+SEC </td>
+
+      </tr>
+
+      <tr>
+
+        <td width="141">BUN :
+
+        <label></label></td>
+
+        <td><label>
+
+          <input type="text" name="BUN" value="0"id="12" onblur="CheckINT(this.value)"/>
+
+        </label>
+
+MG/DL </td>
+
+      </tr>
+
+      <tr>
+
+        <td width="141">Creatinine :
+
+        <label></label></td>
+
+        <td><label>
+
+          <input type="text" name="Creatinine" value="0"id="13" />
+
+        </label>
+
+          <label> </label>
+
+MG/DL </td>
+
+      </tr>
+
+      <tr>
+
+        <td width="141">AST :</td>
+
+        <td><label>
+
+          <input type="text" name="AST" value="0"id="14"  onblur="CheckINT(this.value)"/>
+
+        </label>
+
+IU/L</td>
+
+      </tr>
+
+      <tr>
+
+        <td width="141">PLT :
+
+        <label></label></td>
+
+        <td><label>
+
+          <input type="text" name="PLT"value="0"id="15"  onblur="CheckINT(this.value)"/>
+
+        </label>
+
+          <label> </label>
+
+*10E+09/L </td>
+
+      </tr>
+
+      <tr>
+
+        <td width="141">Sodium :
+
+        <label></label></td>
+
+        <td height="26"><label>
+
+          <input type="text" name="Sodium" value="0"id="16" onblur="CheckINT(this.value)" />
+
+        </label>
+
+MEQ/L</td>
+
+      </tr>
+
+  </table>
+
+    <p>&nbsp;</p>
+
+    <table width="507" border="1" align="center">
+
+      <tr>
+
+        <td colspan="2" bgcolor="#0072E4"><p align="center"><strong>Hemodynamic  parameters</strong></p></td>
+
+      </tr>
+
+      <tr>
+
+        <td width="140">
+
+          <p align="left">PA  systolic  :
+
+          </p>
+
+        </td>
+
+        <td width="351"><label>
+
+          <input type="text" name="PA_Sys" value="0"id="17" onblur="CheckINT(this.value)"/>
+
+        </label>
+
+mmHg</td>
+
+      </tr>
+
+      <tr>
+
+        <td width="140">PA diastolic  :
+
+        <label></label></td>
+
+        <td><label>
+
+          <input type="text" name="PA_Dia" value="0"id="18" onblur="CheckINT(this.value)"/>
+
+mmHg</label></td>
+
+      </tr>
+
+      <tr>
+
+        <td width="140">PA  mean  : </td>
+
+        <td><label>
+
+          <input type="text" name="PA_Mea" value="0"id="19" onblur="CheckINT(this.value)"/>
+
+        </label>
+
+          <label>mmHg</label></td>
+
+      </tr>
+
+      <tr>
+
+        <td width="140">RV  systolic  :
+
+        <label></label></td>
+
+        <td><label>
+
+          <input type="text" name="RV_Sys" value="0"id="20" onblur="CheckINT(this.value)" />
+
+        </label>
+
+          <label>mmHg</label></td>
+
+      </tr>
+
+      <tr>
+
+        <td width="140">RV diastolic:
+
+        <label></label></td>
+
+        <td><label>
+
+          <input type="text" name="RV_Dia" value="0"id="21" onblur="CheckINT(this.value)" />
+
+mmHg</label></td>
+
+      </tr>
+
+      <tr>
+
+        <td width="140">RAP  :
+
+        <label></label></td>
+
+        <td><label>
+
+          <input type="text" name="RAP" value="0"id="22" onblur="CheckINT(this.value)"/>
+
+mmHg</label></td>
+
+      </tr>
+
+      <tr>
+
+        <td width="140">PCWP:
+
+        <label></label></td>
+
+        <td><label>
+
+          <input type="text" name="PCWP" value="0"id="23" onblur="CheckINT(this.value)"/>
+
+        </label>
+
+          <label>mmHg</label></td>
+
+      </tr>
+
+      <tr>
+
+        <td width="140">PTT : </td>
+
+        <td><label>
+
+          <input type="text" name="PTT" value="0"id="24" />
+
+        </label>
+
+mmHg</td>
+
+      </tr>
+
+      <tr>
+
+        <td width="140">TPG  :
+
+        <label></label></td>
+
+        <td><label>
+
+          <input type="text" name="TPG" value="0"id="25" onblur="CheckINT(this.value)" />
+
+        </label>
+
+mmHg</td>
+
+      </tr>
+
+      <tr>
+
+        <td width="140">PVR   :
+
+        <label></label></td>
+
+        <td><label>
+
+          <input type="text" name="PVR" value="0"id="26" />
+
+        </label>
+
+WU</td>
+
+      </tr>
+
+      <tr>
+
+        <td width="140">PA  sat   :
+
+        <label></label></td>
+
+        <td><label>
+
+          <input type="text" name="PA_Sat" value="0"id="27" />
+
+        </label>
+
+%</td>
+
+      </tr>
+
+      <tr>
+
+        <td width="140">CO   :
+
+        <label></label></td>
+
+        <td><label>
+
+          <input type="text" name="CO"value="0" id="28" />
+
+        </label>
+
+liters/min</td>
+
+      </tr>
+
+      <tr>
+
+        <td width="140">CI    :</td>
+
+        <td><label>
+
+        <input type="text" name="CI"value="0" id="29" />
+
+        </label>
+
+liters/min/m2</td>
+
+      </tr>
+
+      <tr>
+
+        <td width="140">HR    :
+
+        <label></label></td>
+
+        <td><label>
+
+          <input type="text" name="HR"value="0"id="30" onblur="CheckINT(this.value)"/>
+
+bmp</label></td>
+
+      </tr>
+
+      <tr>
+
+        <td width="140">IABP  present   :</td>
+
+        <td><select name="IABP" id="31">
+
+          <option value="null"></option>
+
+          <option value="State0">NO</option>
+
+          <option value="State1">YES</option>
+
+        </select></td>
+
+      </tr>
+
+  </table>
+
+    <p>&nbsp;</p>
+
+    <table width="508" border="1" align="center">
+
+      <tr>
+
+        <td height="22" colspan="2" bgcolor="#0072E4"><p align="center"><strong>Medication  parameters</strong></p></td>
+
+      </tr>
+
+      <tr>
+
+        <td width="143"><p>ACE_AII:
+
+        </td>
+
+        <td width="349"><select name="ACE_AII" id="32">
+
+          <option value="null"></option>
+
+          <option value="State0">NO</option>
+
+          <option value="State1">YES</option>
+
+        </select></td>
+
+      </tr>
+
+      <tr>
+
+        <td width="143">Antiarrhythmics: </td>
+
+        <td><select name="Antiarrhythmics" id="33">
+
+          <option value="null"></option>
+
+          <option value="State0">NO</option>
+
+          <option value="State1">YES</option>
+
+        </select></td>
+
+      </tr>
+
+      <tr>
+
+        <td width="143">Bblocker:</td>
+
+        <td><select name="Bblocker" id="34">
+
+          <option value="null"></option>
+
+          <option value="State0">NO</option>
+
+          <option value="State1">YES</option>
+
+        </select></td>
+
+      </tr>
+
+      <tr>
+
+        <td width="143">Digoxin: </td>
+
+        <td><select name="Digoxin" id="35">
+
+          <option value="null"></option>
+
+          <option value="State0">NO</option>
+
+          <option value="State1">YES</option>
+
+        </select></td>
+
+      </tr>
+
+      <tr>
+
+        <td width="143">Diuretic: </td>
+
+        <td><select name="Diuretic" id="36"> 
+
+          <option value="null"></option>
+
+          <option value="State0">NO</option>
+
+          <option value="State1">YES</option>
+
+        </select></td>
+
+      </tr>
+
+      <tr>
+
+        <td width="143">Inotrope: </td>
+
+        <td><select name="Inotrope" id="37">
+
+          <option value="null"></option>
+
+          <option value="State0">NO</option>
+
+          <option value="State1">YES</option>
+
+        </select></td>
+
+      </tr>
+
+      <tr>
+
+        <td width="143">Vasodilator: </td>
+
+        <td><select name="Vasodilator" id="38">
+
+          <option value="null"></option>
+
+          <option value="State0">NO</option>
+
+          <option value="State1">YES</option>
+
+        </select></td>
+
+      </tr>
+
+  </table>
+
+</form>
+
+    <p align="center">
+
+      <input name="submit" type="submit" onClick="check()" value="submit" align="centre" />
+
+      </td>
+
+	</p>
+
+
+
+</body>
+
+</html>
+
